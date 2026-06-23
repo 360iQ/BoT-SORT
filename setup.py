@@ -23,13 +23,6 @@ def get_install_requirements():
     return reqs
 
 
-def get_package_dir():
-    pkg_dir = {
-        "botsort.tracker": "tracker",
-    }
-    return pkg_dir
-
-
 setuptools.setup(
     name="botsort",
     version="0.1.0",
@@ -43,4 +36,5 @@ setuptools.setup(
     include_package_data=True,
     classifiers=["Programming Language :: Python :: 3", "Operating System :: OS Independent"],
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
+    packages=["botsort.tracker"],
 )
