@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Copyright (c) Megvii, Inc. and its affiliates. All Rights Reserved
-
+import os
 import re
 import setuptools
 import glob
@@ -25,7 +25,7 @@ def get_install_requirements():
 
 def get_package_dir():
     pkg_dir = {
-        "tracker": "tracker",
+        "botsort.tracker": "tracker",
     }
     return pkg_dir
 
@@ -43,5 +43,4 @@ setuptools.setup(
     include_package_data=True,
     classifiers=["Programming Language :: Python :: 3", "Operating System :: OS Independent"],
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
-    packages=list(get_package_dir().keys()),
 )
